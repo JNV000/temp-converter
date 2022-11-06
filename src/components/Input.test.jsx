@@ -4,7 +4,7 @@ import { vi } from "vitest";
 import Input from "./Input";
 
 it("renders an input with the proper lave and id when provided both", () => {
-  render(<Input label="Test" id="test" />);
+  render(<Input label="Test" value="30" id="test" />);
 
   const input = screen.getByLabelText("Test");
 
@@ -12,7 +12,7 @@ it("renders an input with the proper lave and id when provided both", () => {
 });
 
 it("renders an input with proper label and id using default for the label", () => {
-  render(<Input id="test" />);
+  render(<Input id="test" value="30" />);
 
   const input = screen.getByLabelText("Test");
 
@@ -24,10 +24,10 @@ it("calls a callback whenever we type in the input", () => {
 
   const user = userEvent.setup();
 
-  render(<Input id="test" handleChange={callback} />);
+  render(<Input id="test" value="30" handleChange={callback} />);
 
   const input = screen.getByLabelText("Test");
   user.type(input, "123");
 
-  expect(callback).toHaveBeenCalled();
+  expect(callback).toHaveBeenCalled(3);
 });
