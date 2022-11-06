@@ -15,6 +15,8 @@ it("change fahrenheit to conversion from celsius", () => {
 
   // new state should have fahrenheit at 212
   expect(newState.fahrenheit).toBe("212");
+  // expect celsius to be unchanged
+  expect(newState.celsius).toBe("100");
 });
 
 it("change celsius to conversion from fahrenheit", () => {
@@ -32,4 +34,6 @@ it("change celsius to conversion from fahrenheit", () => {
 
   // new state should have celsius at 100
   expect(newState.celsius).toBe("100");
+  // expect fahrenheit to be unchanged
+  expect(newState.fahrenheit).toBe("212");
 });
