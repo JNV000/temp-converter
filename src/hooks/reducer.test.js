@@ -31,5 +31,5 @@ it("change celsius to conversion from fahrenheit", () => {
   const newState = reducer(state, action);
 
   // new state should have celsius at 100
-  expect(newState.fahrenheit).toBe("100");
+  expect(newState.celsius).toBe("100");
 });
