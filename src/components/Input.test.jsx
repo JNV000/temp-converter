@@ -21,6 +21,7 @@ it("renders an input with proper label and id using default for the label", () =
 
 it("calls a callback whenever we type in the input", () => {
   const callback = vi.fn();
+
   const user = userEvent.setup();
 
   render(<Input id="test" handleChange={callback} />);

@@ -4,10 +4,8 @@ import capitalize from "lodash/capitalize";
 export default function Input({ label, id, handleChange }) {
   return (
     <div>
-      <label htmlFor={id} onChange={handleChange}>
-        {label || capitalize(id)}
-      </label>
-      <input id={id} type="number" />
+      <label htmlFor={id}>{label || capitalize(id)}</label>
+      <input type="number" id={id} onChange={handleChange} />
     </div>
   );
 }
