@@ -12,7 +12,7 @@ function capitalizeLabel(toCapitalize) {
   // return toCapitalize[0].toUpperCase() + toCapitalize.slice(1);
 }
 
-export default function Input({ label, id, handleChange }) {
+export default function Input({ label, id, value, handleChange }) {
   return (
     <div>
       <label htmlFor={id}>{label || capitalizeLabel(id)}</label>
@@ -24,5 +24,6 @@ export default function Input({ label, id, handleChange }) {
 Input.propTypes = {
   label: PropTypes.string,
   id: PropTypes.string.isRequired,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   handleChange: PropTypes.func.isRequired,
 };
