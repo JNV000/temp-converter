@@ -3,10 +3,12 @@ import reducer from "./reducer";
 
 export default () => {
   // state should include values for both f and c temps.
-  const [temp, dispatch] = useReducer(reducer, {
+  const [state, dispatch] = useReducer(reducer, {
     celsius: 100,
     fahrenheit: 212,
   });
 
-  return [temp, dispatch];
+  const { celsius, fahrenheit } = state;
+
+  return { celsius, fahrenheit, dispatch };
 };
