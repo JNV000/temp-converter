@@ -8,18 +8,19 @@ export default function reducer(state, action) {
     // if fahrenheit input is changed
     case "SET_CELSIUS":
       // use try convert function
-      newTemps.celsius = tryConvert(state.fahrenheit, "convertToCelsius");
+      newTemps.celsius = tryConvert(action.input, "convertToCelsius");
+      // ^ need to use action.input or it will use the previous value instead of the current input
       // return new celsius
       return {
         celsius: newTemps.celsius.toString(),
-        fahrenheit: newTemps.fahrenheit.toString(),
+        fahrenheit: action.input,
       };
     // if Celsius input was changed
     case "SET_FAHRENHEIT":
-      newTemps.fahrenheit = tryConvert(state.celsius, "convertToFahrenheit");
+      newTemps.fahrenheit = tryConvert(action.input, "convertToFahrenheit");
 
       return {
-        celsius: newTemps.celsius.toString(),
+        celsius: action.input,
         fahrenheit: newTemps.fahrenheit.toString(),
       };
     default:

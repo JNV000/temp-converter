@@ -14,14 +14,14 @@ function App() {
             id="celsius"
             value={temps.celsius}
             handleChange={(event) => {
-              dispatch({ type: "SET_FAHRENHEIT" });
+              dispatch({ type: "SET_FAHRENHEIT", input: event.target.value });
             }}
           />
           <Input
             id="fahrenheit"
             value={temps.fahrenheit}
             handleChange={(event) => {
-              dispatch({ type: "SET_CELSIUS" });
+              dispatch({ type: "SET_CELSIUS", input: event.target.value });
             }}
           />
         </div>
