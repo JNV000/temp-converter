@@ -12,16 +12,17 @@ export default function reducer(state, action) {
       // ^ need to use action.input or it will use the previous value instead of the current input
       // return new celsius
       return {
-        celsius: newTemps.celsius.toString(),
+        celsius: parseFloat(newTemps.celsius).toFixed(2).toString(),
         fahrenheit: action.input,
       };
+    // tryinig to set action.input toFixed causes issues with inputs
     // if Celsius input was changed
     case "SET_FAHRENHEIT":
       newTemps.fahrenheit = tryConvert(action.input, "convertToFahrenheit");
 
       return {
         celsius: action.input,
-        fahrenheit: newTemps.fahrenheit.toString(),
+        fahrenheit: parseFloat(newTemps.fahrenheit).toFixed(2).toString(),
       };
     default:
       throw new Error("Invalid action");
