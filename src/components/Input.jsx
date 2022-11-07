@@ -16,7 +16,7 @@ export default function Input({ label, id, value, handleChange }) {
   return (
     <div>
       <label htmlFor={id}>{label || capitalizeLabel(id)}</label>
-      <input type="number" id={id} onChange={handleChange} />
+      <input type="number" id={id} onChange={handleChange} value={value} />
     </div>
   );
 }
