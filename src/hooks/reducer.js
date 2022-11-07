@@ -13,7 +13,7 @@ export default function reducer(state, action) {
       // return new celsius
       return {
         celsius: parseFloat(newTemps.celsius).toFixed(2).toString(),
-        fahrenheit: action.input,
+        fahrenheit: action.input.toString(),
       };
     // tryinig to set action.input toFixed causes issues with inputs
     // if Celsius input was changed
@@ -21,7 +21,7 @@ export default function reducer(state, action) {
       newTemps.fahrenheit = tryConvert(action.input, "convertToFahrenheit");
 
       return {
-        celsius: action.input,
+        celsius: action.input.toString(),
         fahrenheit: parseFloat(newTemps.fahrenheit).toFixed(2).toString(),
       };
     default:
