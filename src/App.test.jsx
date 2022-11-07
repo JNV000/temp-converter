@@ -4,5 +4,5 @@ import { expect, test } from "vitest";
 
 test("renders correctly", () => {
   render(<App />);
-  expect(screen.getByText("Hello world!")).toBeInTheDocument();
+  expect(screen.getByText("Temperature converter")).toBeInTheDocument();
 });
